@@ -3,8 +3,8 @@ const NBA = require('nba');
 const { players } = NBA;
 
 const findPlayer = (str) => {
-  strLower = str.toLowerCase();
-  return players.find((p) => p.fullName.toLowerCase().includes(str_lower));
+  let strLower = str.toLowerCase();
+  return players.find((p) => p.fullName.toLowerCase().includes(strLower));
 };
 
 const playerIdFromName = (name) => {
@@ -23,11 +23,9 @@ const getPlayerProfile = (req, res) => {
 };
 
 const getPlayerInfo = (req, res) => {
-  console.log(req.query);
-  (NBA.stats.playerInfo({ PlayerID: '1627759' })).then(console.log);
-  console.log();
-  param = { PlayerID: req.query.id };
-  NBA.stats.playerInfo(param).then((obj) => res.json(obj));
+    console.log(req.query);
+  param = { "PlayerID": req.query.id };
+  NBA.stats.playerInfo(param).then((obj) => {console.log(obj); res.json(obj);});
 };
 
 const getPlayerStats = (req, res) => {
@@ -36,8 +34,8 @@ const getPlayerStats = (req, res) => {
 };
 
 const getPlayerSplits = (req, res) => {
-  param = { PlayerID: req.query.id };
-  NBA.stats.playerSplits(param).then((l) => res.json(l));
+  param = { PlayerID: req.query.id, LastNGames: "10", Season:"2024-25" };
+  NBA.stats.playerSplits(param).then((obj) => res.json(obj));
 };
 
 const getPlayerShooting = (req, res) => {
