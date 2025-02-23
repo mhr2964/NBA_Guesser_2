@@ -49,7 +49,7 @@ const getPlayerClutch = (req, res) => {
 };
 
 const getPlayerId = (req, res) => {
-  let param = { name: req.query.name };
+  //let param = { name: req.query.name };
   res.json({ id: playerIdFromName(req.query.name) });
 };
 
