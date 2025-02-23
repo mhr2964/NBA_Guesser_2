@@ -6,6 +6,8 @@ const { createRoot } = require('react-dom/client');
 const setupButton = () => {
     let button = document.getElementsByTagName("button")[0];
     button.onclick = async () => {
+        let bruh = "";
+        bruh = "wearg";
         let curr = await (await fetch("/playerRandom")).json();
         document.body.appendChild(headshot.toImg(curr.playerId, 1));
     }
