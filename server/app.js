@@ -7,7 +7,7 @@ const expressHandlebars = require('express-handlebars');
 
 const router = require('./router.js');
 
-const port = process.env.PORT || process.env.NODE_PORT || 3000;
+const port = process.env.PORT || process.env.NODE_PORT || 5000;
 
 const app = express();
 router(app);
