@@ -8,7 +8,10 @@
     "dev": "nodemon -e js,html,css,json ./src/app.js",
     "nodemon": "nodemon --watch ./server --watch ./views ./server/app.js",
     "start": "node ./server/app.js",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "pretest": "eslint ./server --fix",
+    "heroku-postbuild": "webpack",
+    "reset": "webpack && nodemon"
   },
   "repository": {
     "type": "git",
