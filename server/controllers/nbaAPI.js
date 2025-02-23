@@ -18,38 +18,38 @@ const getRandomPlayer = (req, res) => {
 };
 
 const getPlayerProfile = (req, res) => {
-  param = { PlayerID: req.query.id };
+  let param = { PlayerID: req.query.id };
   NBA.stats.playerProfile(param).then((obj) => res.json(obj));
 };
 
 const getPlayerInfo = (req, res) => {
   console.log(req.query);
-  param = { "PlayerID": req.query.id };
+  let param = { "PlayerID": req.query.id };
   NBA.stats.playerInfo(param).then((obj) => {console.log(obj); res.json(obj);});
 };
 
 const getPlayerStats = (req, res) => {
-  param = { PlayerID: req.query.id };
+  let param = { PlayerID: req.query.id };
   NBA.stats.playerStats(param).then((obj) => res.json(obj));
 };
 
 const getPlayerSplits = (req, res) => {
-  param = { PlayerID: req.query.id, LastNGames: "10", Season:"2024-25" };
+  let param = { PlayerID: req.query.id, LastNGames: "10", Season:"2024-25" };
   NBA.stats.playerSplits(param).then((obj) => res.json(obj));
 };
 
 const getPlayerShooting = (req, res) => {
-  param = { PlayerID: req.query.id };
+  let param = { PlayerID: req.query.id };
   NBA.stats.playerShooting(param).then((obj) => res.json(obj));
 };
 
 const getPlayerClutch = (req, res) => {
-  param = { PlayerID: req.query.id };
+  let param = { PlayerID: req.query.id };
   NBA.stats.playerClutch(param).then((obj) => res.json(obj));
 };
 
 const getPlayerId = (req, res) => {
-  param = { name: req.query.name };
+  let param = { name: req.query.name };
   res.json({ id: playerIdFromName(req.query.name) });
 };
 
